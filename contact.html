@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles-weightless.css">
     <link rel="stylesheet" href="styles-contact.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script>checkAuth();</script>
 </head>
 
 <body>
@@ -22,6 +25,7 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">PropPulse Accelerator</a>
             <a href="index.html" class="nav-back-btn">← Back to Home</a>
+            <button onclick="logout()" style="padding: 0.5rem 1rem; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); color: #ef4444; border-radius: 8px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;">Logout</button>
         </div>
     </nav>
 

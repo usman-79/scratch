@@ -93,7 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
         if (modal) modal.classList.remove('active');
-    document.body.style.overflow = ''; // Add this to restore the scrollbar    }
+        document.body.style.overflow = '';
+    }
 
     // Attach to all CTA buttons
     document.querySelectorAll('.magnet-button').forEach(btn => {

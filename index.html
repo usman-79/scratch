@@ -10,11 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles-weightless.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script>checkAuth();</script>
 </head>
 
 <body>
     <div class="ambient-light"></div>
     <div class="ambient-light-2"></div>
+
+    <!-- Logout Button -->
+    <button onclick="logout()" style="position:fixed; top:2rem; right:2rem; display:inline-flex; align-items:center; gap:0.5rem; padding:0.75rem 1.5rem; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); color:#ef4444; border-radius:10px; cursor:pointer; font-family:'Inter',sans-serif; font-weight:600; font-size:0.95rem; z-index:10000; backdrop-filter:blur(10px); transition:all 0.3s ease;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        Logout
+    </button>
 
     <!-- Contact Us Button -->
     <a href="contact.html" class="contact-us-btn">

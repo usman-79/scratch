@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PropPulse Accelerator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .ambient-light {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .ambient-light-2 {
+            position: fixed;
+            bottom: -20%;
+            right: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .auth-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7C3AED, #2563EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .auth-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 2rem;
+        }
+
+        .auth-field {
+            margin-bottom: 1.2rem;
+        }
+
+        .auth-field label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 0.4rem;
+        }
+
+        .auth-field input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            color: #111827;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        .auth-field input:focus {
+            border-color: #7C3AED;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .auth-submit {
+            width: 100%;
+            padding: 0.9rem;
+            margin-top: 0.5rem;
+            background: linear-gradient(135deg, #7C3AED, #2563EB);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .auth-submit:hover {
+            opacity: 0.9;
+        }
+
+        .auth-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .auth-toggle {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #7C3AED;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .auth-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .auth-error {
+            color: #ef4444;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 0.8rem;
+            min-height: 1.2em;
+        }
+
+        .auth-success {
+            color: #10b981;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 0.8rem;
+            min-height: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ambient-light"></div>
+    <div class="ambient-light-2"></div>
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-logo">PropPulse Accelerator</div>
+            <h1 class="auth-title" id="auth-title">Welcome Back</h1>
+            <form id="auth-form" autocomplete="on">
+                <div class="auth-field">
+                    <label for="auth-email">Email</label>
+                    <input type="email" id="auth-email" placeholder="you@example.com" required>
+                </div>
+                <div class="auth-field">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" placeholder="Your password" required minlength="6">
+                </div>
+                <button type="submit" class="auth-submit" id="auth-submit">Log In</button>
+            </form>
+            <div class="auth-error" id="auth-error"></div>
+            <div class="auth-success" id="auth-success"></div>
+            <a href="#" class="auth-toggle" id="auth-toggle">Don't have an account? Sign up</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script>
+        redirectIfLoggedIn();
+        initLoginPage();
+    </script>
+</body>
+
+</html>
