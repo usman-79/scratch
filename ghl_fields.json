@@ -1,0 +1,44 @@
+[
+  {
+    "name": "first_name",
+    "id": "first_name",
+    "placeholder": "First Name",
+    "type": "text",
+    "inferredLabel": "First Name"
+  },
+  {
+    "name": "last_name",
+    "id": "last_name",
+    "placeholder": "Last Name",
+    "type": "text",
+    "inferredLabel": "Last Name"
+  },
+  {
+    "name": "phone",
+    "id": "phone",
+    "placeholder": "Phone",
+    "type": "tel",
+    "inferredLabel": "Phone *"
+  },
+  {
+    "name": "email",
+    "id": "email",
+    "placeholder": "Email",
+    "type": "email",
+    "inferredLabel": "Email *"
+  },
+  {
+    "name": "lTn6DgpJQjbTlU2m5yVX",
+    "id": "lTn6DgpJQjbTlU2m5yVX",
+    "placeholder": "Type Budget (e.g .450k)",
+    "type": "number",
+    "inferredLabel": "Maximum Purchase Price (To find best surburb in Australia)"
+  },
+  {
+    "name": "g-recaptcha-response",
+    "id": "g-recaptcha-response-100000",
+    "placeholder": "",
+    "type": "textarea",
+    "inferredLabel": "Unknown"
+  }
+]

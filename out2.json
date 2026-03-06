@@ -1,0 +1,105 @@
+{
+  "scrollHeight": 5814,
+  "elements": [
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "ambient-light-2",
+      "bottom": 5813.859375,
+      "height": 768,
+      "position": "fixed",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "HTML",
+      "id": "",
+      "class": "",
+      "bottom": 4844.890625,
+      "height": 4844.890625,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "BODY",
+      "id": "",
+      "class": "",
+      "bottom": 4844.890625,
+      "height": 4844.890625,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "MAIN",
+      "id": "",
+      "class": "",
+      "bottom": 4844.890625,
+      "height": 4844.890625,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "SECTION",
+      "id": "",
+      "class": "why-choose-section",
+      "bottom": 4844.890625,
+      "height": 1052.34375,
+      "position": "relative",
+      "display": "flex",
+      "visibility": "visible"
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "features-grid",
+      "bottom": 4764.890625,
+      "height": 692.34375,
+      "position": "static",
+      "display": "grid",
+      "visibility": "visible"
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "feature-card",
+      "bottom": 4764.890625,
+      "height": 317.375,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "class": "",
+      "bottom": 4723.890625,
+      "height": 102.375,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "H3",
+      "id": "",
+      "class": "",
+      "bottom": 4605.515625,
+      "height": 29,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "feature-icon",
+      "bottom": 4552.515625,
+      "height": 64,
+      "position": "static",
+      "display": "block",
+      "visibility": "visible"
+    }
+  ]
+}

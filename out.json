@@ -1,0 +1,85 @@
+{
+  "scrollHeight": 6831,
+  "elements": [
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "ambient-light-2",
+      "bottom": 6830.96875,
+      "height": 400,
+      "position": "fixed"
+    },
+    {
+      "tag": "HTML",
+      "id": "",
+      "class": "",
+      "bottom": 5692.484375,
+      "height": 5692.484375,
+      "position": "static"
+    },
+    {
+      "tag": "BODY",
+      "id": "",
+      "class": "",
+      "bottom": 5692.484375,
+      "height": 5692.484375,
+      "position": "static"
+    },
+    {
+      "tag": "MAIN",
+      "id": "",
+      "class": "",
+      "bottom": 5692.484375,
+      "height": 5692.484375,
+      "position": "static"
+    },
+    {
+      "tag": "SECTION",
+      "id": "",
+      "class": "why-choose-section",
+      "bottom": 5692.484375,
+      "height": 1187.125,
+      "position": "relative"
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "features-grid",
+      "bottom": 5612.484375,
+      "height": 827.125,
+      "position": "static"
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "feature-card",
+      "bottom": 5612.484375,
+      "height": 371.96875,
+      "position": "static"
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "class": "",
+      "bottom": 5571.484375,
+      "height": 127.96875,
+      "position": "static"
+    },
+    {
+      "tag": "H3",
+      "id": "",
+      "class": "",
+      "bottom": 5427.515625,
+      "height": 58,
+      "position": "static"
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "class": "feature-icon",
+      "bottom": 5345.515625,
+      "height": 64,
+      "position": "static"
+    }
+  ]
+}
