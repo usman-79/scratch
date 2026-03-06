@@ -1,0 +1,61 @@
+/* Budget Widget Styles */
+.budget-widget-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    animation: fadeUp 1s ease-out;
+}
+
+.budget-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    /* Muted slate grey */
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.budget-display-box {
+    background: #fff;
+    padding: 1.5rem 4rem;
+    border-radius: 20px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    /* Soft distinctive shadow */
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 400px;
+    /* Minimal width to look substantial */
+    justify-content: center;
+}
+
+.currency-icon {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    /* Light grey dollar sign */
+}
+
+.budget-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    /* Deep Navy/Black */
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    .budget-display-box {
+        padding: 1.5rem 2rem;
+        min-width: unset;
+        width: 90%;
+    }
+
+    .budget-amount {
+        font-size: 1.8rem;
+    }
+}
