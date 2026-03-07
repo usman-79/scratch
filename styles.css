@@ -1758,24 +1758,41 @@ input[type=range]::-webkit-slider-thumb:hover {
     flex-shrink: 0;
 }
 
-.contact-page-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: #f9fafb;
+.footer-contact-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #7C3AED, #2563EB);
+    color: #fff;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size: 1rem;
+    border-radius: 10px;
     transition: all 0.3s ease;
-    padding: 0.5rem 0;
+    margin-bottom: 1rem;
 }
 
-.contact-page-link:hover {
-    color: #7C3AED;
-    transform: translateX(5px);
+.footer-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
 }
 
-.contact-page-link svg {
-    flex-shrink: 0;
+.footer-offices {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-office strong {
+    color: #f9fafb;
+    font-size: 0.95rem;
+}
+
+.footer-office p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
+    line-height: 1.4;
 }
 
 .footer-bottom {
