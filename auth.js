@@ -10,40 +10,53 @@ function getSupabase() {
     return _supabase;
 }
 
-// Wait for Supabase CDN to load, then run callback
+// Wait for Supabase CDN to load, then run callback (with 5s timeout fallback)
 function onSupabaseReady(cb) {
     if (window.supabase) {
         cb();
+        return;
+    }
+    var elapsed = 0;
+    var interval = setInterval(function () {
+        elapsed += 50;
+        if (window.supabase) {
+            clearInterval(interval);
+            cb();
+        } else if (elapsed >= 5000) {
+            // Supabase CDN failed to load — redirect to login
+            clearInterval(interval);
+            showBody();
+            window.location.href = 'login.html';
+        }
+    }, 50);
+}
+
+function showBody() {
+    if (document.body) {
+        document.body.style.visibility = 'visible';
     } else {
-        // Poll until loaded
-        var interval = setInterval(function () {
-            if (window.supabase) {
-                clearInterval(interval);
-                cb();
-            }
-        }, 50);
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.visibility = 'visible';
+        });
     }
 }
 
-// Auth guard — hides body, redirects if not logged in
+// Auth guard — body is hidden via CSS in <head>, this confirms auth and reveals it
 function checkAuth() {
-    document.addEventListener('DOMContentLoaded', function () {
-        document.body.style.visibility = 'hidden';
-    });
     onSupabaseReady(async function () {
-        var sb = getSupabase();
-        var result = await sb.auth.getSession();
-        if (!result.data.session) {
-            window.location.href = 'login.html';
-        } else {
-            // Show body once confirmed
-            if (document.body) {
-                document.body.style.visibility = 'visible';
+        try {
+            var sb = getSupabase();
+            var result = await sb.auth.getSession();
+            if (!result.data.session) {
+                window.location.href = 'login.html';
             } else {
-                document.addEventListener('DOMContentLoaded', function () {
-                    document.body.style.visibility = 'visible';
-                });
+                showBody();
             }
+        } catch (err) {
+            // Network error or Supabase failure — redirect to login safely
+            console.error('Auth check failed:', err);
+            showBody();
+            window.location.href = 'login.html';
         }
     });
 }
@@ -120,10 +133,14 @@ function initLoginPage() {
 // Redirect to index if already logged in (for login page)
 function redirectIfLoggedIn() {
     onSupabaseReady(async function () {
-        var sb = getSupabase();
-        var result = await sb.auth.getSession();
-        if (result.data.session) {
-            window.location.href = 'index.html';
+        try {
+            var sb = getSupabase();
+            var result = await sb.auth.getSession();
+            if (result.data.session) {
+                window.location.href = 'index.html';
+            }
+        } catch (err) {
+            console.error('Session check failed:', err);
         }
     });
 }
