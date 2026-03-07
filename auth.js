@@ -109,7 +109,7 @@ function initLoginPage() {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Sign Up';
             } else {
-                successMsg.textContent = 'Check your email for a confirmation link!';
+                successMsg.textContent = 'Signup successful! Please Log in to continue.';
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Sign Up';
             }
