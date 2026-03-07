@@ -181,14 +181,29 @@
 
 @media (max-width: 768px) {
     .floating-slab {
-        padding: 1rem 2rem;
-        min-width: auto;
-        width: 90%;
+        padding: 1rem 1.5rem;
+        min-width: unset;
+        width: calc(100% - 2rem);
         border-radius: 20px;
     }
 
+    .budget-input {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
     .budget-text {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    .currency-symbol {
+        font-size: 1.5rem;
+    }
+
+    .suburb-finder-title {
+        font-size: 1.75rem;
+        margin: 2rem 0 1.5rem 0;
+        padding: 0 0.5rem;
     }
 }
 
