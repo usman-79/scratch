@@ -1374,12 +1374,14 @@ input[type=range]::-webkit-slider-thumb:hover {
     visibility: visible !important;
     opacity: 1 !important;
     overflow: visible !important;
+    min-height: 859px;
 }
 
 .ghl-form-inline iframe {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    min-height: 859px;
 }
 
 

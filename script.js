@@ -3,6 +3,16 @@
 // Debug logging for anchor links
 console.log('Script loaded - anchor links should work');
 
+// Scroll to #form-section if navigated from another page
+window.addEventListener('load', () => {
+    if (window.location.hash === '#form-section') {
+        const target = document.getElementById('form-section');
+        if (target) {
+            setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
+        }
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // Log when DOM is ready
     console.log('DOM loaded - setting up event listeners');
@@ -60,9 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         frame.parentNode.replaceChild(newFrame, frame);
                     }
 
-                    // Update both forms
                     updateIframeSrc('inline-ghl-form');
-                    updateIframeSrc('inline-b7iMLSrRiqy0UkVyoRu3');
 
                     // Briefly flash green to indicate success
                     budgetInput.style.color = '#10b981'; // success green
@@ -82,43 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // GHL Modal Logic
-    const modal = document.getElementById('ghl-modal');
-    const closeBtn = document.querySelector('.modal-close-btn');
-    const ctaButtons = document.querySelectorAll('.magnet-button'); // Target all CTA buttons
-
-    function openModal() {
-        if (modal) modal.classList.add('active');
-    }
-
-    function closeModal() {
-        if (modal) modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // Attach to all CTA buttons
+    // Navigate all CTA buttons to the form section
     document.querySelectorAll('.magnet-button').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            const href = btn.getAttribute('href');
+            if (href && href.includes('#form-section')) {
+                const target = document.getElementById('form-section');
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                // else: let native navigation happen (e.g. contact page -> index.html#form-section)
             }
         });
     });
-
-    // Close listeners
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            // Close if clicking the overlay background (not the container)
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    }
 
 });
